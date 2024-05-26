@@ -1,0 +1,20 @@
+Replace Shell32.dll via Command Prompt (Recommended, Shorter)
+
+1. StepOpen up an elevated command prompt
+2. Step Enter cd C:/Windows/system32
+
+This is often not necessary, system32 is usually the default directory.
+
+3. Step Enter TAKEOWN /f shell32.dll
+
+Now we’ve taken ownership of the file. But that is not enough! Now that we have taken ownership of shell32.dll we need to give our account permission to modify the file. Or you will get a error message: “You need permission to perform this action” if you try to rename shell32.dll.
+
+4. StepEnter  CACLS shell32.dll /grant USERNAME:F
+
+Replace USERNAME with your username. Enter your username exactly (I’m not sure if this is case sensitive, so make sure you get it right).
+
+5. StepYou can now rename shell32.dll manually or via command line: rename shell32.dll shell32.dll.backup
+
+6. Step Copy your modified shell32.dll into the folder: copy PATH_TO_MODIFIED_SHELL32.dll C:\Windows\system32\
+
+Replace PATH_TO_MODIFIED_SHELL32.dll with the path to the modified shell32.dll. If you can’t make this work, simply CD into the folder and then run this line: copy shell32.dll C:\Windows\system32 
