@@ -1,0 +1,43 @@
+You should back up your data, back up the registry, and make a system restore point before making changes in the Local Group Policy Editor.
+To disable access to the Registry Editor, first make sure the account you want to restrict access in is an administrator account. If not, follow the steps in the previous
+section to convert it to one. Then, log in to that account.
+Press Windows key + R to open the Run dialog box. Then, type gpedit.msc and press Enter.
+ 
+In the Local Group Policy Editor, navigate to User Configuration > Administrative Templates > System in the left pane.
+Then, double-click the Prevent access to registry editing tools setting in the right pane.
+ 
+On the Prevent access to registry editing tools dialog box, select Enabled in the upper-left and then click OK.
+Close the Local Group Policy Editor and reboot your computer.
+ 
+For the user you want to prevent from accessing the registry editor, be sure to convert their account back to a standard account. Standard users cannot make changes 
+in the Local Group Policy Editor. They get an error message when they open it.
+ 
+The Local Group Policy Editor still opens, but there are no settings available to change.
+ 
+Once you've disabled access to the Registry Editor, any user who tries to access the Registry Editor, will see the User Account Control dialog box. Then, the following 
+error message displays.
+ 
+To re-enable access to the Registry Editor, open the Prevent access to registry editing tools setting again in the Local Group Policy Editor. Select either Not Configured 
+or Disabled on the Prevent access to registry editing tools dialog box.
+Disabling the Registry Editor (Policy Plus)
+This method is for Windows 10 Home users only.
+Windows 10 Home does not include the Local Group Policy Editor. But if you're using Windows 10 Home, you can use the free, portable, open source program Policy Plus instead.
+If you're using Windows 10 Pro or Enterprise, you have access to the Local Group Policy Editor. You don't need to use Policy Plus. In fact, you shouldn't. 
+The Local Group Policy Editor overrides Policy Plus. So it doesn't make sense to use Policy Plus if you already have the Local Group Policy Editor.
+To use Policy Plus, download the EXE file and run it. No installation is needed.
+Not all templates are included in Policy Plus by default. To download the latest policy files and add them to Policy Plus, go to Help > Acquire ADMX Files.
+ 
+Accept the default Destination folder and click Begin.
+ 
+Click Yes to open and load the ADMX files in Policy Plus.
+ 
+To disable access to the Registry Editor using Policy Plus, select System in the left pane. Then, double-click  the Prevent access to registry editing tools setting 
+in the left pane.
+ 
+On the Edit Policy Setting dialog box, select Enabled and click OK.
+You may have to change this setting and reboot a few times for it to take effect.
+ 
+Policy Plus also allows you to search for settings by unique ID, registry (search by key path or name or value name), and text (find in title, descriptions, and in comments).
+That's it! Now the registry editor should be restricted for the user account. Of course, this isn't the only way to reduce privileges on Windows. Check out some other ways 
+to restrict access for users
+
