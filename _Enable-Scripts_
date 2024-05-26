@@ -1,0 +1,12 @@
+1. Open PowerShell.
+
+2. Copy and paste the command below into PowerShell, and press Enter.
+
+ Get-ExecutionPolicy -List
+
+3. You will now see all execution policies. The policies are listed in precedence order.
+
+4. Open Settings, and click/tap on the Update & security icon.
+
+5. Click/tap on For developers on the left side, check the Change execution policy to allow 
+local PowerShell scripts to run without signing. Require signing for remote scripts. box under PowerShell on the right side, and click/tap on the Apply button.
