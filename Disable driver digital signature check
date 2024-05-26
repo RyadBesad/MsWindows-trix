@@ -1,0 +1,7 @@
+    Press Win+R and type gpedit.msc.
+    Click on User Configuration on the left panel.
+    Double-click on Administrative Templates.
+    Double-click on System and select Driver Installation.
+    Select Enabled, from the drop-down items, select Ignore.
+    Click OK to apply the changes.
+    Restart your device.
