@@ -1,0 +1,8 @@
+delete entry from boot list:
+----------------------------
+
+Before deleting BCDEdit options you might need to disable or suspend BitLocker and Secure Boot on the computer.
+
+bcdedit /v	show id
+
+bcdedit /delete {identifier}        delete entry
