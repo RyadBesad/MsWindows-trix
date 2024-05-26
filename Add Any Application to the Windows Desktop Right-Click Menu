@@ -1,0 +1,36 @@
+HKEY_CLASSES_ROOT\Directory\Background\shell
+Next, you’ll want to create a new key underneath the shell key, the name of which is exactly what is going to show up on the desktop menu. Right-click on the “shell” key, and then choose New \ Key from the menu.
+Optional: If you want to assign an “Alt” key to this menu entry for quicker access, you can change the (Default) value on the right and put an & character in front of the key you want to use. For instance, if you wanted to be able to just use the N key to launch Notepad once the desktop context menu pops up, you can do this:
+
+
+Personally I don’t find this terribly useful since you have to use the mouse to right-click on the desktop… may as well just use the mouse to click the item. Still, for completeness I’ve included it.
+
+
+ 
+Next you’ll need to create the command key that will actually hold the command used to launch the application. Right-click on the new Notepad key, and then choose New \ Key from the menu.
+
+
+
+Give this key the name “command” in lowercase.
+
+
+
+To complete this step you’ll need the full path to the application that you want to launch. You can use Shift + Right-Click to get the Copy as Path menu item to find this more quickly. Note: of course, for Notepad you wouldn’t need the full path, but this is just an example.
+
+
+
+Now click on “command” on the left side, and then double-click on the (Default) key in the right side to edit the string value.
+
+
+
+Paste in the full path to the executable that you got from the “Copy as Path” step above, or you can put in the full path yourself if you’d like.
+
+Once it’s done, it should look like this:
+
+
+
+And right-clicking on the desktop will produce the new menu item… naturally, using this menu item should launch Notepad.
+
+
+
+You can add as many applications to the desktop context menu as you’d like, just repeat the steps again with a new menu item name.
