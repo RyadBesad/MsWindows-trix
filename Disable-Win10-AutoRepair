@@ -1,0 +1,16 @@
+    Click on start button
+    Look for Command Prompt
+    Right click on the top finding result
+    Pick Run as administrator
+    Write the command “bcdedit” and press enter
+    Note the reoveryenabled and identifier values under the Windows Startup Loader region. The values should be the same as:
+
+identifier: {current}
+
+recoveryenabled: yes
+
+    The command that users will type in order to deactivate self-initiated fixing in Windows 10 is:
+
+bcdedit /set {current} recoveryenabled no
+
+Upon typing the above command, click on Enter.
