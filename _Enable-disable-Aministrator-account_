@@ -1,0 +1,7 @@
+Enabling the Administrator account using the command prompt is the quickest and easiest method. 
+
+    Open a command prompt as an administrator by typing cmd in the search field. 
+    From the results, right-click the entry for Command Prompt, and select Run as Administrator. 
+    At the command prompt, type net user administrator. The value for Account Active should say No 
+Type net user administrator /active:yes. You should receive a response that the command completed successfully.
+    Type net user administrator. The value for Account Active should now say Yes 
