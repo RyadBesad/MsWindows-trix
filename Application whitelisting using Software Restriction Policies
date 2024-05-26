@@ -1,0 +1,26 @@
+Configuring SRPs for application whitelisting
+Consider a scenario where a user installs a program without notifying the administrator. Such a program could remain unpatched after a critical vulnerability is publicly disclosed, which opens it up to be 
+exploited by malware. Obviously, unpatched applications shouldn’t be allowed to run until they’re secured. With application whitelisting, administrators can ensure that only approved programs are allowed to run and any other program will be blocked by default.
+To configure an SRP to operate in a path-based whitelisting mode with the most secure settings, follow these steps:
+●	Open Group Policy Management.
+●	Right-click the domain or the required subfolder to create a new GPO, or select an already existing one. Right-click and select Edit to open the Group Policy Management Editor.
+●	Go to User Configuration > Policies > Windows Settings > Security Settings > Software Restriction Policies.
+●	Right-click the Software Restriction Policies folder and select New Software Restriction Policies.
+●	Double-click the Enforcement Select All software files and All users options. Click OK.
+ 
+●	Double-click Security Levels > Disallowed. Click the Set as default button and click Yes on the dialog box that pops up. Click OK.
+ 
+●	Click Additional Rules to view the default file paths configured to allow programs running under paths specified by the SystemRoot and 
+ProgramFiles environment variables.
+
+●	To add a new path rule, right-click the Additional Rules folder and select New Path Rule.
+●	In the New Path Rule dialog box, specify a path or click Browse to select a path. From the Security level drop-down menu, select Unrestricted. Enter a suitable description.
+●	Click OK.
+By adding this rule, all programs in the specified path will be allowed to run as long as the libraries loaded by these programs are loaded from 
+C:\Windows\ and C:\Program Files\ paths.
+ 
+Figure 4. Error message for a program loading libraries from a disallowed path.
+Summary
+Application whitelisting using an SRP defines which applications are allowed and prevents unauthorized programs from running, which in turn protects your Windows environment. 
+Whitelisting keeps your enterprise protected from emerging threats while still allowing users to run the applications they need to perform their duties. Application whitelisting
+will save you time and money by preventing costly downtime, recovery, and remediation efforts.
