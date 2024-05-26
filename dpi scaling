@@ -1,0 +1,57 @@
+Of course this will only work if DPIScaling doesn't attempt to use something
+that requires admin permissions. I suspect that it does. You can always add
+permissions for ordinary users to the registry. You can monitor DPIScaling
+using Process Monitor to find out what registry keys it needs write access
+to.
+ 
+A second problem is to edit DPIScaling you need to give yourself
+permissions.
+ 
+So to be allowed to edit DPIScaling.
+-----------------------------------------------
+Click Start - All Programs - Accessories - Right click Command Prompt and
+choose Run As Administrator. Type
+ 
+takeown /f %windir%\system32\DPIScaling.exe /a
+icacls %windir%\system32\DPIScaling.exe /grant Administrators:f
+ 
+To edit DPIScaling.exe
+------------------------------
+Download ResHacker from http://www.angusj.com/resourcehacker/
+Application Manifests are a resource type of 24 (they don't get a name like
+icons etc). Extract a copy of the manifest (Action menu). Edit it with
+notepad and change
+ 
+requestedExecutionLevel
+ 
+from
+ 
+requireAdministrator
+ 
+to
+ 
+asInvoker
+ 
+Then use ResHacker to replace the manifest (Action menu).
+ 
+To Monitor DPIScaling
+------------------------------
+Download Process Monitor
+(http://technet.microsoft.com/en-us/sysinternals/bb896645).
+ 
+Start the program as an administrator (right click and choose Run As
+Administrator). Set the filter to (the 4 drop down boxes along the top)
+ 
+ImagePath Contains DPIScaling Include
+ 
+then click Add.
+then set a second filter
+ 
+Event Class Is Registry Include
+ 
+then click Add then Ok.
+ 
+Run DPIScaling. Change a setting. Look for Access Denied results in the
+listing of registry keys accessed.
+ 
+Using Regedit change permissions for users to Full on those Registry keys.
