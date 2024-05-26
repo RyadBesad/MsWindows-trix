@@ -1,0 +1,6 @@
+To disable Drag and Drop in Windows 10, do the following.
+1.	Open the Registry Editor app.
+2.	Go to the following Registry key.
+HKEY_CURRENT_USER\Control Panel\Desktop
+3.	
+4.	On the right, modify both DragHeight and DragWidth values and set them to x10 of pixels for which to drag items before dropping them.  
