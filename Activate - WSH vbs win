@@ -1,0 +1,4 @@
+change user type to admin
+
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows Script Host\Settings
+enabled (reg dword 32bit) =1
